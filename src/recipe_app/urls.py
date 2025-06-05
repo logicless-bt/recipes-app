@@ -1,4 +1,6 @@
 from django.urls import include
+from django.conf import settings
+from django.conf.urls.static import static
 """
 URL configuration for recipe_app project.
 
@@ -20,5 +22,8 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('recipes.urls'))
+    path('', include('recipes.urls')),
+    path('recipes/', include('recipes.urls'))
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
