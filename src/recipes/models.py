@@ -27,3 +27,7 @@ class Recipe(models.Model):
 
     def separate_ingredients_by_comma(self):
         self.separate_ingredients = self.ingredients.split(", ")
+
+    def save(self, *args, **kwargs):
+        self.calculate_difficulty()
+        super().save(*args, **kwargs)

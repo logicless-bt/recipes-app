@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recipe Details</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: sans-serif;
+            }
+
+            .container {
+                display: flex;
+                height: 100vh;
+            }
+
+            .side-column {
+                flex: 1;
+                background-color: cadetblue;
+            }
+
+            .main-content {
+                flex: 2;
+                padding: 40px;
+                overflow-y: auto;
+            }
+
+            .recipe {
+                background-color: #f8f8f8;
+                padding: 20px;
+                margin-bottom: 30px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                word-wrap: break-word;  /* wraps long words */
+            }
+
+            .recipe h2 {
+                margin-top: 0;
+            }
+
+            .recipe img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+            .description {
+                white-space: normal;  /* ensures it wraps */
+                word-break: break-word;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class = "container">
+            <div class = "side-column"></div>
+
+            <div class = "main-content">
+                <h1>
+                    All Recipes
+                </h1>
+
+                
+                {% for recipe in recipes %}
+                    <div class="recipe">
+                        <a href="{% url 'recipes:recipe_indiv' recipe.pk %}">
+                            {{ recipe.name }}
+                        </a> 
+                        <img src="{{ recipe.pic.url }}" alt="Recipe Image">
+                        <p><strong>Cooking time:</strong> {{ recipe.cooking_time }} minutes</p>
+                        <p class="description"><strong>Description:</strong> {{ recipe.description }}</p>
+                    </div>
+                {% endfor %}
+                
+            </div>
+
+            <div class = "side-column"></div>
+        </div>
+    </body>
+</html>

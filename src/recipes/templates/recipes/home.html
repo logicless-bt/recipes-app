@@ -1,23 +1,57 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
     <head>
         <style>
-            body {background-color: cadetblue}
+            body {
+                background-image: url("{% static 'recipes/background.jpg' %}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 100vh;
+                margin: 0;
+                font-family: sans-serif;
+                color: white;
+            }
+
+            .centered {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+                border: 2px solid white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+
+            a:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
         </style>
     </head>
    <title>
        Recipes Home
    </title>
    <body>
-        <div>
-            <h2>
-                Welcome to RecipeGo!
-            </h2>
-        </div>
-        <div>
-            <h4>
-                Functionality is currently a work in progress
-            </h4>
+        <div class="centered">
+            <div>
+                <h2>
+                    RecipeGo
+                </h2>
+            </div>
+            <div>
+                <a href="{% url 'recipes:recipe_details' %}">
+                    Enter site
+                </a>
+            </div>
         </div>
    </body>
 </html>
