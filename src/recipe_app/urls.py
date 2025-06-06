@@ -3,6 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from recipes import views
+from .views import login_view, logout_view
 """
 URL configuration for recipe_app project.
 
@@ -24,7 +25,9 @@ Including another URLconf
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('recipes/', include('recipes.urls'))
+    path('recipes/', include('recipes.urls')),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

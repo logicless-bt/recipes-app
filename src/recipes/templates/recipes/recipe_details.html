@@ -1,53 +1,9 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
     <head>
         <title>Recipe Details</title>
-        <style>
-            body {
-                margin: 0;
-                font-family: sans-serif;
-            }
-
-            .container {
-                display: flex;
-                height: 100vh;
-            }
-
-            .side-column {
-                flex: 1;
-                background-color: cadetblue;
-            }
-
-            .main-content {
-                flex: 2;
-                padding: 40px;
-                overflow-y: auto;
-            }
-
-            .recipe {
-                background-color: #f8f8f8;
-                padding: 20px;
-                margin-bottom: 30px;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                word-wrap: break-word;  /* wraps long words */
-            }
-
-            .recipe h2 {
-                margin-top: 0;
-            }
-
-            .recipe img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 10px;
-            }
-
-            .description {
-                white-space: normal;  /* ensures it wraps */
-                word-break: break-word;
-            }
-        </style>
+        <link rel = 'stylesheet' href = "{% static 'css/recipe_details.css' %}">
     </head>
 
     <body>
@@ -71,7 +27,9 @@
                     </div>
                 {% endfor %}
                 
+                <a href ="{%url 'logout' %}"> Logout </a>
             </div>
+            
 
             <div class = "side-column"></div>
         </div>
