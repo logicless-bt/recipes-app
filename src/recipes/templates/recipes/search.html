@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h2> Search for recipes! </h2>
+
+        <hr>
+        <form action="" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">search</button>
+
+        <br>
+        {% if recipe_df %}
+            {{recipe_df|safe}} 
+            
+            <br>
+            <img src="data:image/png;base64, {{chart|safe}}">
+        {% else %}
+            <h3> no data</h3>
+        {% endif %}
+
+        </form> 
+    </body>
+</html>
