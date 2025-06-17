@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html>
-<head>
-    <title>{{ recipe.name }}</title>
-    <link rel="stylesheet" href = "{% static 'css/recipe_indiv.css' %}">
-</head>
-<body>
+
+{% block title %}{{ recipe.name }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/recipe_indiv.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
     <div class="side-column"></div>
 
     <div class="main-content">
@@ -21,5 +24,5 @@
     </div>
 
     <div class="side-column"></div>
-</body>
-</html>
+</div>
+{% endblock %}

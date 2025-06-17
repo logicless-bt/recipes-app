@@ -27,7 +27,7 @@ def get_chart(chart_type, data, **kwargs):
 
    #select chart type and configure based on user choice
    if chart_type == '#1':
-      plt.bar(data['date_created'], data['quantity'])
+      plt.bar(data['difficulty'], data['cooking_time'])
    
    plt.tight_layout() #layout details
    chart = get_graph()

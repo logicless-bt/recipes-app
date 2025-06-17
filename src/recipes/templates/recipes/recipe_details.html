@@ -1,37 +1,31 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html>
-    <head>
-        <title>Recipe Details</title>
-        <link rel = 'stylesheet' href = "{% static 'css/recipe_details.css' %}">
-    </head>
 
-    <body>
-        <div class = "container">
-            <div class = "side-column"></div>
+{% block title %}Recipe Details{% endblock %}
 
-            <div class = "main-content">
-                <h1>
-                    All Recipes
-                </h1>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/recipe_details.css' %}">
+{% endblock %}
 
-                
-                {% for recipe in recipes %}
-                    <div class="recipe">
-                        <a href="{% url 'recipes:recipe_indiv' recipe.pk %}">
-                            {{ recipe.name }}
-                        </a> 
-                        <img src="{{ recipe.pic.url }}" alt="Recipe Image">
-                        <p><strong>Cooking time:</strong> {{ recipe.cooking_time }} minutes</p>
-                        <p class="description"><strong>Description:</strong> {{ recipe.description }}</p>
-                    </div>
-                {% endfor %}
-                
-                <a href ="{%url 'logout' %}"> Logout </a>
+{% block content %}
+<div class="container">
+    <div class="side-column"></div>
+
+    <div class="main-content">
+        <h1>All Recipes</h1>
+
+        {% for recipe in recipes %}
+            <div class="recipe">
+                <a href="{% url 'recipes:recipe_indiv' recipe.pk %}">
+                    {{ recipe.name }}
+                </a> 
+                <img src="{{ recipe.pic.url }}" alt="Recipe Image">
+                <p><strong>Cooking time:</strong> {{ recipe.cooking_time }} minutes</p>
+                <p class="description"><strong>Description:</strong> {{ recipe.description }}</p>
             </div>
-            
+        {% endfor %}
+    </div>
 
-            <div class = "side-column"></div>
-        </div>
-    </body>
-</html>
+    <div class="side-column"></div>
+</div>
+{% endblock %}
