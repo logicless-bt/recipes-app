@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Recipe
-from .forms import RecipeSearchForm
+from .forms import RecipeSearchForm, RecipeForm
 import pandas as pd
 from django.contrib.auth.decorators import login_required #authentication
 from .utils import get_recipename_from_id, get_chart
@@ -59,3 +59,19 @@ def charts(request):
     return render(request, 'recipes/charts.html', {
         'difficulty_chart': difficulty_chart
     })
+
+@login_required
+def add_recipe(request):
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('recipes:recipe_details')  # Or wherever you want to send users after
+    else:
+        form = RecipeForm()
+
+    return render(request, 'recipes/add_recipe.html', {'form': form})
+
+@login_required
+def about(request):
+    return render(request, 'recipes/about.html')

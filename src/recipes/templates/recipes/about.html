@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Recipe Details{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="side-column"></div>
+
+    <div class="main-content">
+        <h1>About Me</h1>
+
+        {% for recipe in recipes %}
+            <div class="recipe">
+                <a href="{% url 'recipes:recipe_indiv' recipe.pk %}">
+                    {{ recipe.name }}
+                </a> 
+                <img src="{{ recipe.pic.url }}" alt="Recipe Image">
+                <p><strong>Cooking time:</strong> {{ recipe.cooking_time }} minutes</p>
+                <p class="description"><strong>Description:</strong> {{ recipe.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="side-column"></div>
+</div>
+{% endblock %}
