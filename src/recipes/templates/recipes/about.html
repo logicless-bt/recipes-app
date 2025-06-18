@@ -14,16 +14,66 @@
     <div class="main-content">
         <h1>About Me</h1>
 
-        {% for recipe in recipes %}
-            <div class="recipe">
-                <a href="{% url 'recipes:recipe_indiv' recipe.pk %}">
-                    {{ recipe.name }}
-                </a> 
-                <img src="{{ recipe.pic.url }}" alt="Recipe Image">
-                <p><strong>Cooking time:</strong> {{ recipe.cooking_time }} minutes</p>
-                <p class="description"><strong>Description:</strong> {{ recipe.description }}</p>
-            </div>
-        {% endfor %}
+        <h1>Hello, World!</h1>
+		<p>
+			I am a programmer from Washington, D.C. As a former teacher, accessibility is my number one priority.
+		</p>
+
+        <section>
+		   <h1>Work</h1>
+		   <div class="grid">
+		      <!-- Grid items TBA -->
+		      <div class="grid__item">
+			      <h2>Website Directory</h2>
+			      <p>
+			      	In this project, I compiled and linked a number of sites. It was written in Sublime Text Editor. the HTML and CSS pages are linked on Github.
+			      </p>
+			   </div>
+
+			   <div class="grid__item">
+			      <h2>qFilms API</h2>
+			      <p>
+			      	This manages movies, users, and lists of favorite movies. It is a RESTful back-end application that serves data to various projects. 
+			      </p>
+			      <a href="https://github.com/logicless-bt/QFilms-API">GitHub repository</a>
+			   </div>
+
+			   <div class="grid__item">
+			      <h2>qFilms App (client)</h2>
+			      <p>
+			      	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+			      </p>
+			      <a href="https://github.com/logicless-bt/qfilms-client">GitHub repository</a>
+			   </div>
+
+			   <div class="grid__item">
+			      <h2>Meet App</h2>
+			      <p>
+			      	The Meet App is a serverless, progressive web application that integrates with Google Calendar API. 
+			      <a href="https://meet-five-eta.vercel.app/">See the project</a> <br>
+                  <a href="https://github.com/logicless-bt/meet">GitHub repository</a>
+			   </div>
+
+			   <div class="grid__item">
+			      <h2>Chat.io</h2>
+			      <p>
+			      	Built with React Native and Expo, this mobile chat application allows users to send messages, images, and locations with one another. It uses Google Firebase. 
+			      </p>
+			      <a href="https://github.com/logicless-bt/chat">GitHub repository</a>
+			   </div>
+
+			   <div class="grid__item">
+			      <h2>QFilms Angular App (client)</h2>
+			      <p>
+			      	This is a reimagining of the qFilms app using Angular. It has the same functionalities but is created in a framework better suited to scaling. 
+			      </p>
+			      <a href="https://github.com/logicless-bt/qFilms-Angular-client-2">GitHub repository</a>
+			   </div>
+
+
+		   </div>
+		</section>
+
     </div>
 
     <div class="side-column"></div>
