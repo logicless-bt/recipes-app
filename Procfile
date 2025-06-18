@@ -1,0 +1,1 @@
+web: gunicorn bookstore.wsgu --log-file -
