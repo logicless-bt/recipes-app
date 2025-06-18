@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-ml49cp(e)=yakpe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://recipe-go-e093518c55d8.herokuapp.com/', 'https://git.heroku.com/recipe-go.git']
+ALLOWED_HOSTS = ['recipe-go-e093518c55d8.herokuapp.com', 'git.heroku.com/recipe-go.git']
 
 
 # Application definition
