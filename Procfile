@@ -1,1 +1,1 @@
-web: gunicorn src.recipe_app.wsgi --log-file -
+web: gunicorn src.recipe_app.wsgi --chdir src
