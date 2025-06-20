@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Recipe
-from .forms import RecipeSearchForm, RecipeForm
+from .forms import RecipeSearchForm, RecipeForm, SignUpForm
 import pandas as pd
-from django.contrib.auth.decorators import login_required #authentication
+from django.contrib.auth.decorators import authenticate, login_required #authentication
 from .utils import get_recipename_from_id, get_chart
 
 # Create your views here.
@@ -75,3 +75,13 @@ def add_recipe(request):
 @login_required
 def about(request):
     return render(request, 'recipes/about.html')
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  # Redirect to login after signup
+    else:
+        form = SignUpForm()
+    return render(request, 'users/signup.html', {'form': form})

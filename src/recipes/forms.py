@@ -1,5 +1,7 @@
 from django import forms
 from .models import Recipe
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 CHART__CHOICES = (          
    ('#1', 'Bar chart'),    # when user selects "Bar chart", it is stored as "#1"
@@ -19,3 +21,10 @@ class RecipeForm(forms.ModelForm):
       widgets = {
          'description': forms.Textarea(attrs={'rows': 4}),
       }
+
+class SignUpForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
