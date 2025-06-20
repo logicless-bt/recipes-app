@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Recipe
 from .forms import RecipeSearchForm, RecipeForm, SignUpForm
 import pandas as pd
-from django.contrib.auth.decorators import authenticate, login_required #authentication
+from django.contrib.auth.decorators import login_required #authentication
 from .utils import get_recipename_from_id, get_chart
 
 # Create your views here.
