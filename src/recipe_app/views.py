@@ -15,13 +15,15 @@ class SignUpForm(forms.ModelForm):
 
 def login_view(request):
     error_message = ''
+    form = AuthenticationForm()
+    signup_form = UserCreationForm()
     if request.method == 'POST':
         if 'login' in request.POST:
             form = AuthenticationForm(request, data=request.POST)
             if form.is_valid():
                 user = form.get_user()
                 login(request, user)
-                return redirect('home')  # or wherever your home page is
+                return redirect('recipes:recipe_details')  
             else:
                 error_message = 'Invalid login'
         elif 'signup' in request.POST:
@@ -35,11 +37,13 @@ def login_view(request):
         form = AuthenticationForm()
         signup_form = UserCreationForm()
 
-    return render(request, 'auth/login.html', {
+    context = {
         'form': form,
         'signup_form': signup_form,
         'error_message': error_message,
-    })
+    }
+
+    return render(request, 'auth/login.html', context)
 
 def logout_view(request):                                  
    logout(request)             #pre-defined Django function
