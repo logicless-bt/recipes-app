@@ -62,7 +62,6 @@
             <h2>Sign Up</h2>
             <form method="POST">
                 {% csrf_token %}
-                <input type="hidden" name="signup" value="1">
                 <input type="text" name="username" required>
                 <input type="password" name="password1" required>
                 <input type="password" name="password2" required>

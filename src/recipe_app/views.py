@@ -29,10 +29,18 @@ def login_view(request):
         elif 'signup' in request.POST:
             signup_form = UserCreationForm(request.POST)
             if signup_form.is_valid():
-                signup_form.save()
-                return redirect('login')  # go back to login after signup
-            else:
-                error_message = 'Signup failed'
+                user = signup_form.save()
+                user.save()
+                print("user created: ", user.username)
+                # Authenticate and login user immediately
+                username = signup_form.cleaned_data.get('username')
+                raw_password = signup_form.cleaned_data.get('password1')
+                user = authenticate(request, username=username, password=raw_password)
+                if user is not None:
+                    login(request, user)
+                    return redirect('recipes:recipe_details')  # or your app’s home
+                else:
+                    error_message = 'Unable to log you in after signup.'
     else:
         form = AuthenticationForm()
         signup_form = UserCreationForm()
