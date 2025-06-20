@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 #Django authentication libraries           
 from django.contrib.auth import authenticate, login, logout
 #Django Form for authentication
-from django.contrib.auth.forms import AuthenticationForm    
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm 
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django import forms
@@ -14,32 +14,31 @@ class SignUpForm(forms.ModelForm):
         fields = ['username', 'email', 'password']
 
 def login_view(request):
-    login_error = None
-    signup_form = SignUpForm()
-    
+    error_message = ''
     if request.method == 'POST':
         if 'login' in request.POST:
-            username = request.POST['username']
-            password = request.POST['password']
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
+            form = AuthenticationForm(request, data=request.POST)
+            if form.is_valid():
+                user = form.get_user()
                 login(request, user)
-                return redirect('recipes:recipe_details')
+                return redirect('home')  # or wherever your home page is
             else:
-                login_error = "Invalid username or password."
+                error_message = 'Invalid login'
         elif 'signup' in request.POST:
-            signup_form = SignUpForm(request.POST)
+            signup_form = UserCreationForm(request.POST)
             if signup_form.is_valid():
-                user = signup_form.save(commit=False)
-                user.set_password(signup_form.cleaned_data['password'])
-                user.save()
-                login(request, user)
-                return redirect('recipes:recipe_details')
+                signup_form.save()
+                return redirect('login')  # go back to login after signup
+            else:
+                error_message = 'Signup failed'
+    else:
+        form = AuthenticationForm()
+        signup_form = UserCreationForm()
 
     return render(request, 'login.html', {
-        'form': None,  
+        'form': form,
         'signup_form': signup_form,
-        'error_message': login_error
+        'error_message': error_message,
     })
 
 def logout_view(request):                                  
