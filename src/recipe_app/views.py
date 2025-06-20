@@ -35,7 +35,7 @@ def login_view(request):
         form = AuthenticationForm()
         signup_form = UserCreationForm()
 
-    return render(request, 'login.html', {
+    return render(request, 'auth/login.html', {
         'form': form,
         'signup_form': signup_form,
         'error_message': error_message,
