@@ -1,0 +1,197 @@
+[
+{
+  "model": "recipes.recipe",
+  "pk": 1,
+  "fields": {
+    "name": "Chicken curry",
+    "cooking_time": 20,
+    "ingredients": "Chicken, rice, curry powder",
+    "separate_ingredients": "['Chicken', 'rice', 'curry powder']",
+    "difficulty": "Medium",
+    "description": "This creamy Indian chicken curry has an unbeatable combination of flavors thanks to an array of aromatic warm spices, plain yogurt, and coconut milk.",
+    "pic": "recipes/chicken_curry_qd73Ryg.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 2,
+  "fields": {
+    "name": "Lasagna",
+    "cooking_time": 10,
+    "ingredients": "Pasta, marinara sauce, ricotta cheese, ground beef",
+    "separate_ingredients": "['Pasta', 'marinara sauce', 'ricotta cheese', 'ground beef']",
+    "difficulty": "Hard",
+    "description": "This classic homemade lasagna features an easy meat sauce layered with noodles and plenty of cheese.",
+    "pic": "recipes/lasagna_f3fwfa2.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 3,
+  "fields": {
+    "name": "Baked potato",
+    "cooking_time": 5,
+    "ingredients": "Potato, butter, salt",
+    "separate_ingredients": "",
+    "difficulty": "Easy",
+    "description": "This simple but filling dish makes an excellent, easy side.",
+    "pic": "recipes/baked_potato_qt9YBRi.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 4,
+  "fields": {
+    "name": "Spaghetti",
+    "cooking_time": 8,
+    "ingredients": "Spaghetti, cheese, marinara sauce",
+    "separate_ingredients": "",
+    "difficulty": "Easy",
+    "description": "This classic meal is one-pot: makes it easy on the cleaning!",
+    "pic": "recipes/Spaghetti.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 5,
+  "fields": {
+    "name": "Taco Bowl",
+    "cooking_time": 15,
+    "ingredients": "Ground beef, rice, bell pepper, corn, beans",
+    "separate_ingredients": "",
+    "difficulty": "Medium",
+    "description": "This deconstructed taco makes it easier to size portions.",
+    "pic": "recipes/taco_bowl_bEAe80U.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 6,
+  "fields": {
+    "name": "Stir Fry",
+    "cooking_time": 15,
+    "ingredients": "Rice, chicken, bell peppers",
+    "separate_ingredients": "",
+    "difficulty": "Medium",
+    "description": "This easy Chicken Stir Fry recipe is loaded with fresh veggies and the most delicious sauce made with honey, soy sauce, and toasted sesame oil!",
+    "pic": "recipes/stir_fry_wfx3B0B.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 7,
+  "fields": {
+    "name": "Pan chicken",
+    "cooking_time": 8,
+    "ingredients": "Chicken, scallions, lemon sauce",
+    "separate_ingredients": "",
+    "difficulty": "Easy",
+    "description": "This chicken breast skillet recipe is fast, easy, and delicious. You can easily monitor the internal temperature of the meat when pan-roasting chicken. Leaving the skin on adds a lot of flavor and much-needed moisture.",
+    "pic": "recipes/Pan_chicken.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 8,
+  "fields": {
+    "name": "S'more",
+    "cooking_time": 3,
+    "ingredients": "Marshmallow, chocolate, Graham cracker",
+    "separate_ingredients": "",
+    "difficulty": "Easy",
+    "description": "This camping delight can even be made in the microwave!",
+    "pic": "recipes/smore.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 9,
+  "fields": {
+    "name": "Cheesy Broccoli Soup",
+    "cooking_time": 10,
+    "ingredients": "Broccoli, cheese, milk",
+    "separate_ingredients": "",
+    "difficulty": "Medium",
+    "description": "This vegetarian dish remains filling and a crowd-pleaser.",
+    "pic": "recipes/broccoli.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 10,
+  "fields": {
+    "name": "Quinoa Pilaf",
+    "cooking_time": 9,
+    "ingredients": "Quinoa, garlic, bell pepper",
+    "separate_ingredients": "",
+    "difficulty": "Easy",
+    "description": "This vegan dish is healthy and quick: a perfect emergency meal.",
+    "pic": "recipes/quinoa.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 11,
+  "fields": {
+    "name": "Cauliflower Fried Rice",
+    "cooking_time": 11,
+    "ingredients": "Cauliflower rice, eggs, garlic, ginger, soy sauce",
+    "separate_ingredients": "",
+    "difficulty": "Medium",
+    "description": "This meal can easily be made vegan by substituting beans for eggs without sacrificing any of the flavor",
+    "pic": "recipes/cauliflower_rice.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 12,
+  "fields": {
+    "name": "Jello",
+    "cooking_time": 3,
+    "ingredients": "Gelatin, flavoring",
+    "separate_ingredients": "",
+    "difficulty": "Easy",
+    "description": "Home-made jello is cheaper and healthier than store-bought!",
+    "pic": "recipes/jello.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 13,
+  "fields": {
+    "name": "Pesto Sandwich",
+    "cooking_time": 7,
+    "ingredients": "Chicken, pesto, bread",
+    "separate_ingredients": "",
+    "difficulty": "Easy",
+    "description": "Frying or grilling chicken in a thick pesto sauce makes for a warm, tasty meal.",
+    "pic": "recipes/pesto_chicken.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 14,
+  "fields": {
+    "name": "Lo mein",
+    "cooking_time": 14,
+    "ingredients": "Lo mein, beef, shallot, peas, soy sauce",
+    "separate_ingredients": "",
+    "difficulty": "Medium",
+    "description": "This staple dish is remarkably versatile and allows for any kind of vegetable to be substituted.",
+    "pic": "recipes/lo_mein.jpg"
+  }
+},
+{
+  "model": "recipes.recipe",
+  "pk": 15,
+  "fields": {
+    "name": "Chicken Satay",
+    "cooking_time": 5,
+    "ingredients": "Chicken, lime, garlic",
+    "separate_ingredients": "",
+    "difficulty": "Easy",
+    "description": "This protein-heavy meal only serves as an entree -- make sure to have a side dish!",
+    "pic": "recipes/chicken_satay.jpg"
+  }
+}
+]
