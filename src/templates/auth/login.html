@@ -45,7 +45,9 @@
         <div class = 'centered'>
             <h1>Login</h1>         
             {% if error_message %}
-            <!--{{error_message}}-->
+                <div style="background-color: #ffcccc; color: #900; padding: 10px 20px; border-radius: 8px; margin-bottom: 20px; font-weight: bold;">
+                    {{ error_message }}
+                </div>
             {% endif %}
 
             
@@ -58,7 +60,15 @@
             <!-- Signup form -->
             <form method="POST">
                 {% csrf_token %}
-                {{ signup_form.as_p }}
+                {% for field in signup_form %}
+                    <div style="margin-bottom: 10px;">
+                        <label>{{ field.label }}</label><br>
+                        {{ field }}
+                        {% if field.errors %}
+                            <div style="color: red; font-weight: bold;">{{ field.errors|striptags }}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
                 <button type="submit" name="signup">Sign Up</button>
             </form>
         </div>
